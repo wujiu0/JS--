@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = Math.floor(Math.random() * 11);
+      while (true) {
+        let input = +prompt('请输入一个数字');
+        if (input < num) {
+          alert('猜小啦');
+          continue;
+        } else if (input > num) {
+          alert('猜大了');
+          continue;
+        }
+        alert('恭喜你答对了！');
+        break;
+      }
+    </script>
+  </body>
+</html>

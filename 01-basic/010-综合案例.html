@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      h1 {
+        text-align: center;
+        /*margin: 0 auto;*/
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      th {
+        padding: 5px 30px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>订单确认</h1>
+
+    <script>
+      let price = +prompt("请输入价格");
+      let num = +prompt("请输入数量");
+      let address = +prompt("输入地址");
+      let total = price * num;
+      document.write(`
+  <table>
+  <thead>
+  <tr>
+    <th>名称</th>
+    <th>价格</th>
+    <th>数量</th>
+    <th>总价</th>
+    <th>地址</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>小米手机</td>
+    <td>${price}元</td>
+    <td>${num}</td>
+    <td>${total}元</td>
+    <td>${address}</td>
+  </tr>
+  </tbody>
+</table>
+  `);
+      const arr = ["red", "blue"];
+      arr = [1];
+      const name = 1;
+      name = 2;
+    </script>
+  </body>
+</html>
