@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // localStorage
+      localStorage.setItem('user', 'wujiu');
+      console.log(localStorage.getItem('user'));
+      localStorage.removeItem('user');
+
+      const arr = [1, 2, 3];
+      localStorage.setItem('arr', JSON.stringify(arr));
+      const obj = {
+        name: 'wujiu',
+        id: 1,
+        hobbies: ['hello', 'hi'],
+      };
+      console.log(obj);
+      localStorage.setItem('objJson', JSON.stringify(obj));
+
+      const objJson = localStorage.getItem('objJson');
+      console.log(objJson);
+      console.log(JSON.parse(objJson));
+    </script>
+  </body>
+</html>

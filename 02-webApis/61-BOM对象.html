@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="refresh">刷新</button>
+    <button id="forward">前进</button>
+    <button id="back">后退</button>
+
+    <script>
+      // location 对象
+      (function () {
+        console.log(location);
+        console.log(location.href);
+        console.log(location.search);
+        console.log(location.hash);
+        console.log(location.host);
+        console.log(location.pathname);
+
+        const btn = document.querySelector('#refresh');
+        btn.addEventListener('click', () => {
+          // location.reload();
+          //   强制刷新
+          location.reload(true);
+        });
+      })();
+      // navigator 对象
+      (function () {
+        console.log(navigator.userAgent);
+      })();
+      // history 对象
+      (function () {
+        const forward = document.querySelector('#forward');
+        const back = document.querySelector('#back');
+        forward.addEventListener('click', () => {
+          // history.forward();
+          history.go(1);
+        });
+        back.addEventListener('click', () => {
+          // history.back();
+          history.go(-1);
+        });
+      })();
+    </script>
+  </body>
+</html>
