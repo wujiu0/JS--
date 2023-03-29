@@ -171,9 +171,9 @@
         .join('');
 
       const total = goodsList.reduce((prev, current) => {
-        return (prev + current.price * 100 * current.count) / 100;
+        return prev + (current.price * 100 * current.count) / 100;
       }, 0);
-      document.querySelector('.amount').toFixed(2);
+      document.querySelector('.amount').innerHTML = total.toFixed(2);
     </script>
   </body>
 </html>
