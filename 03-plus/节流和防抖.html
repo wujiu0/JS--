@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: lightgray;
+
+      font-size: 40px;
+      text-align: center;
+      color: #ffffff;
+    }
+  </style>
+  <body>
+    <div class="box">节流 <span>1</span></div>
+    <br />
+    <div class="box">防抖 <span>1</span></div>
+    <script>
+      const box = document.querySelectorAll('.box');
+      let i = 1;
+      box[0].addEventListener('mousemove', throttle(mousemove, 2000));
+      box[1].addEventListener('mousemove', debounce(mousemove, 2000));
+
+      function throttle(fn, t, ...args) {
+        let timer;
+        return function () {
+          if (!timer) {
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = null;
+            }, t);
+          }
+        };
+      }
+      function debounce(fn, t, ...args) {
+        let timer;
+        return function () {
+          if (timer) {
+            clearTimeout(timer);
+          }
+          timer = setTimeout(() => {
+            fn.apply(this, args);
+          }, t);
+        };
+      }
+
+      function mousemove() {
+        console.log(this);
+        console.log(this.children);
+        this.children[0].innerHTML = i++;
+      }
+    </script>
+  </body>
+</html>

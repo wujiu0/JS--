@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      Array.prototype.max = function () {
+        return Math.max(...arr);
+      };
+      Array.prototype.sum = function () {
+        return this.reduce((prev, current) => prev + current, 0);
+      };
+
+      const arr = [1, 4, 3, 2];
+      console.log(arr.sum());
+      console.log(arr.max());
+
+      arr.name = 'hello';
+      console.log(arr.name);
+      console.log(arr);
+      console.log(arr.length);
+      // const p = Array.prototype;
+      console.log(arr.prototype);
+      console.log(arr.__proto__);
+      console.log(Object.getPrototypeOf(arr));
+
+      // String.prototype = p;
+      // console.log(String.prototype);
+    </script>
+  </body>
+</html>

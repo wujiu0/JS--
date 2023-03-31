@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [10, 20, 30, 40];
+
+      const resFind = arr.find((element) => {
+        return element > 60;
+      });
+      console.log(resFind);
+
+      const resEvery = arr.every((element) => {
+        return element > 6;
+      });
+      console.log(resEvery);
+
+      const resSome = arr.some((element) => {
+        return element > 20;
+      });
+      console.log(resSome);
+    </script>
+  </body>
+</html>

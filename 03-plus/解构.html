@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 数组解构
+      (function () {
+        const [a, b, c] = [1, 2, 3];
+        const [d = 0, e, f = 0] = [4];
+        console.log(a, b, c, d, e, f); // 1 2 3 4 undefined 0
+        const [g, ...h] = [5, 6, 7, 8];
+        console.log(g, h); // 5 [6, 7, 8]
+        const [i, j, k] = [9, [10, 11]];
+        console.log(i, j, k); // 9 [10, 11] undefined
+        const [l, [m, n]] = [12, [13, 14]];
+        console.log(l, m, n); // 12 13 14
+        {
+          let a = 1;
+          let b = 2;
+          [a, b] = [b, a];
+          console.log(a, b); // 2 1
+        }
+      })();
+
+      // 对象解构
+      (function () {
+        const data = {
+          id: 42,
+          isVerified: true,
+        };
+
+        const { id, isVerified } = data;
+        console.log(id, isVerified); // 42 true
+        const { id: param1, isVerified: param2 } = data;
+        console.log(param1, param2); // 42 true
+
+        const pig = {
+          name: '佩奇',
+          family: {
+            mother: '猪妈妈',
+            father: '猪爸爸',
+            sister: '乔治',
+          },
+          age: 6,
+        };
+
+        const {
+          name,
+          family: { mother, father, sister },
+          age,
+        } = pig;
+        console.log(name, mother, age);
+      })();
+    </script>
+  </body>
+</html>
